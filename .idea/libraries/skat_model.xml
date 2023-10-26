@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="skat-model">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../skat-model.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../skat-model.jar!/" />
+    </SOURCES>
+  </library>
+</component>

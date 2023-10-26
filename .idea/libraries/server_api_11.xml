@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="server-api-11">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../Dependencies/server-api-11.0" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../Dependencies/server-api-11.0" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../Dependencies/server-api-11.0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../Dependencies/server-api-11.0" recursive="false" type="SOURCES" />
+  </library>
+</component>

@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="jpa-eclipselink-2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../skat-model.jar!/" />
+      <root url="file://$PROJECT_DIR$/../Dependencies/jpa-eclipselink-2.7" />
+      <root url="file://$PROJECT_DIR$/../Dependencies/server-api-11.0" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../skat-model.jar!/" />
+      <root url="file://$PROJECT_DIR$/../Dependencies/jpa-eclipselink-2.7" />
+      <root url="file://$PROJECT_DIR$/../Dependencies/server-api-11.0" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../Dependencies/jpa-eclipselink-2.7" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../Dependencies/server-api-11.0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../Dependencies/jpa-eclipselink-2.7" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/../Dependencies/server-api-11.0" recursive="false" type="SOURCES" />
+  </library>
+</component>
