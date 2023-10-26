@@ -1,6 +1,10 @@
+import javax.validation.constraints.NotNull;
+
 public class Card {
 
+    @NotNull
     private CardSuit suit;
+    @NotNull
     private CardRank rank;
 
     // Constructor
@@ -24,11 +28,5 @@ public class Card {
 
     public void setRank(CardRank rank) {
         this.rank = rank;
-    }
-
-    // Overriding the toString method to represent the Card
-    @Override
-    public String toString() {
-        return rank + " of " + suit;
     }
 }

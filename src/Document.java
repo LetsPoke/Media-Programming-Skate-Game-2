@@ -1,51 +1,52 @@
-import java.util.Set;
-import java.util.Collections;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-public class Document {
+public class Document extends BaseEntity {
 
-    private final String alias;
-    private final Person owner;
-    private Set<Game> games = Collections.emptySet();
-    private long baseValue;
+    @NotNull
+    private byte[] content;
 
-    // Constructor
-    public Document(String alias, Person owner) {
-        this.alias = alias;
-        this.owner = owner;
+    @NotNull
+    @Size(max = 64)
+    private String hash;
+
+    @NotNull
+    private String type;
+
+    // Default no-arg constructor
+    public Document() {}
+
+    // Constructor with arguments
+    public Document(long identity, int version, long created, long modified, byte[] content, String hash, String type) {
+        super(identity, version, created, modified);
+        this.content = content;
+        this.hash = hash;
+        this.type = type;
     }
 
-    // Getter and Setter methods
-    public String getAlias() {
-        return alias;
+    // Getter methods
+    public byte[] getContent() {
+        return content;
     }
 
-    public Person getOwner() {
-        return owner;
+    public String getHash() {
+        return hash;
     }
 
-    public Set<Game> getGames() {
-        return games;
+    public String getType() {
+        return type;
     }
 
-    public void setGames(Set<Game> games) {
-        this.games = games;
+    // Setter methods
+    protected void setContent(byte[] content) {
+        this.content = content;
     }
 
-    public long getBaseValue() {
-        return baseValue;
+    protected void setHash(String hash) {
+        this.hash = hash;
     }
 
-    public void setBaseValue(long baseValue) {
-        this.baseValue = baseValue;
-    }
-
-    @Override
-    public String toString() {
-        return "Document{" +
-                "alias='" + alias + '\'' +
-                ", owner=" + owner +
-                ", games=" + games +
-                ", baseValue=" + baseValue +
-                '}';
+    public void setType(String type) {
+        this.type = type;
     }
 }

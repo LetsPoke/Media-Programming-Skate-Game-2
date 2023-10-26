@@ -1,23 +1,32 @@
+import javax.validation.constraints.NotNull;
+
 public abstract class BaseEntity implements Comparable<BaseEntity> {
-    protected boolean identity;
+    @NotNull
+    protected long identity;
+    @NotNull
+    protected int version;
+    @NotNull
     protected long created;
-    protected long modified;
+    protected long modified; // No @NotNull as it can be null if not modified
 
     // Protected no-arg constructor
-    protected BaseEntity() {
-        this(true, System.currentTimeMillis(), System.currentTimeMillis());
-    }
+    protected BaseEntity() {this(0L, 0, 0L, 0L);}
 
     // Public constructor with arguments
-    public BaseEntity(boolean identity, long created, long modified) {
+    public BaseEntity(long identity, int version, long created, long modified) {
         this.identity = identity;
+        this.version = version;
         this.created = created;
         this.modified = modified;
     }
 
     // Getter methods
-    public boolean isIdentity() {
+    public long getIdentity() {
         return identity;
+    }
+
+    public int getVersion() {
+        return version;
     }
 
     public long getCreated() {
@@ -29,9 +38,11 @@ public abstract class BaseEntity implements Comparable<BaseEntity> {
     }
 
     // Protected Setter methods (as mentioned for a later task)
-    protected void setIdentity(boolean identity) {
+    protected void setIdentity(long identity) {
         this.identity = identity;
     }
+
+    protected void setVersion(int version) {this.version = version;}
 
     protected void setCreated(long created) {
         this.created = created;

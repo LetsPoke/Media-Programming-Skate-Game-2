@@ -1,17 +1,25 @@
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Pattern;
+
 public class Address {
 
+    @NotNull
     private String street;
+    @NotNull
+    @Pattern(regexp = "\\d{5}")
     private String postcode;
+    @NotNull
     private String city;
-    private String county; // assuming this is the equivalent of "Staat"
+    @NotNull
+    @Size(min = 2, max = 2)
     private String country;
 
     // Constructor
-    public Address(String street, String postcode, String city, String county, String country) {
+    public Address(String street, String postcode, String city, String country) {
         this.street = street;
         this.postcode = postcode;
         this.city = city;
-        this.county = county;
         this.country = country;
     }
 
@@ -40,30 +48,11 @@ public class Address {
         this.city = city;
     }
 
-    public String getCounty() {
-        return county;
-    }
-
-    public void setCounty(String county) {
-        this.county = county;
-    }
-
     public String getCountry() {
         return country;
     }
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    @Override
-    public String toString() {
-        return "Address{" +
-                "street='" + street + '\'' +
-                ", postcode='" + postcode + '\'' +
-                ", city='" + city + '\'' +
-                ", county='" + county + '\'' +
-                ", country='" + country + '\'' +
-                '}';
     }
 }
