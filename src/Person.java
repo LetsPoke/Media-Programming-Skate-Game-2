@@ -1,41 +1,55 @@
-import java.util.Collections;
+import Enums.PersonGroup;
+
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 public class Person extends BaseEntity {
-    private String email;
+
+    @NotNull
+    private char[] email;
+    @NotNull
     private byte[] passwordHash;
-    private String groupHash; // Assuming SHA-256 hash for the group
-    private Name name;  // Composite
-    private Address address;  // Composite
-    private String phoneNumber;
-    private SkatTable tablePosition;
-    private Set<Game> games;  // 0..* cardinality
-    private Set<NetworkNegotiation> negotiations;  // 0..* cardinality
+    @NotNull
+    private PersonGroup group;
+    @NotNull
+    private long balance;
+    @NotNull
+    private Name name;
+    @NotNull
+    private Address address;
+    @NotNull
+    private Set<String> phones;
+    @NotNull
+    private Document avatar;
+    private SkatTable table; //might be null
+    private Byte tablePosition; // might be null
+    @NotNull
+    private Set<NetworkNegotiation> negotiations;
 
     // Protected no-arg constructor
-    protected Person() {
-        super();
-        this.games = Collections.emptySet();
-        this.negotiations = Collections.emptySet();
-    }
+    protected Person() {}
 
     // Public constructor with arguments
-    public Person(String email, byte[] passwordHash, String groupHash, Name name, Address address, String phoneNumber) {
-        this();
+    public Person(char[] email, byte[] passwordHash, PersonGroup group, long balance, Name name, Address address, Set<String> phones, Document avatar, SkatTable table, Byte tablePosition, Set<NetworkNegotiation> negotiations) {
         this.email = email;
         this.passwordHash = passwordHash;
-        this.groupHash = groupHash;
+        this.group = group;
+        this.balance = balance;
         this.name = name;
         this.address = address;
-        this.phoneNumber = phoneNumber;
+        this.phones = phones;
+        this.avatar = avatar;
+        this.table = table;
+        this.tablePosition = tablePosition;
+        this.negotiations = negotiations;
     }
 
     // Getter and Setter methods
-    public String getEmail() {
+    public char[] getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(char[] email) {
         this.email = email;
     }
 
@@ -47,19 +61,27 @@ public class Person extends BaseEntity {
         this.passwordHash = passwordHash;
     }
 
-    public String getGroupHash() {
-        return groupHash;
+    public PersonGroup getGroup() {
+        return group;
     }
 
-    public void setGroupHash(String groupHash) {
-        this.groupHash = groupHash;
+    public void setGroup(PersonGroup group) {
+        this.group = group;
+    }
+
+    public long getBalance() {
+        return balance;
+    }
+
+    public void setBalance(long balance) {
+        this.balance = balance;
     }
 
     public Name getName() {
         return name;
     }
 
-    public void setName(Name name) {
+    protected void setName(Name name) {
         this.name = name;
     }
 
@@ -67,54 +89,47 @@ public class Person extends BaseEntity {
         return address;
     }
 
-    public void setAddress(Address address) {
+    protected void setAddress(Address address){
         this.address = address;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public Set<String> getPhones() {
+        return phones;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    protected void setPhones(Set<String> phones) {
+        this.phones = phones;
     }
 
-    public SkatTable getTablePosition() {
+    public Document getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Document avatar) {
+        this.avatar = avatar;
+    }
+
+    public SkatTable getTable() {
+        return table;
+    }
+
+    public void setTable(SkatTable table) {
+        this.table = table;
+    }
+
+    public Byte getTablePosition() {
         return tablePosition;
     }
 
-    public void setTablePosition(SkatTable tablePosition) {
+    public void setTablePosition(Byte tablePosition) {
         this.tablePosition = tablePosition;
-    }
-
-    public Set<Game> getGames() {
-        return games;
-    }
-
-    public void setGames(Set<Game> games) {
-        this.games = games;
     }
 
     public Set<NetworkNegotiation> getNegotiations() {
         return negotiations;
     }
 
-    public void setNegotiations(Set<NetworkNegotiation> negotiations) {
+    protected void setNegotiations(Set<NetworkNegotiation> negotiations){
         this.negotiations = negotiations;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "email='" + email + '\'' +
-                ", passwordHash=" + passwordHash +
-                ", groupHash='" + groupHash + '\'' +
-                ", name=" + name +
-                ", address=" + address +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", tablePosition=" + tablePosition +
-                ", games=" + games +
-                ", negotiations=" + negotiations +
-                '}';
     }
 }
