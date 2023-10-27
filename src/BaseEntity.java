@@ -12,7 +12,10 @@ public abstract class BaseEntity implements Comparable<BaseEntity> {
     protected long modified;
 
     // Protected no-arg constructor
-    protected BaseEntity() {}
+    protected BaseEntity() {
+        this(0L, 0, 0L, 0L);
+    }
+
 
     // Public constructor with arguments
     public BaseEntity(long identity, int version, long created, long modified) {

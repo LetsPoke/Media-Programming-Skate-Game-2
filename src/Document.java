@@ -12,7 +12,9 @@ public class Document extends BaseEntity {
     private String type;
 
     // Protected no-arg constructor
-    protected Document() {}
+    protected Document() {
+        this(0, 0, 0, 0, new byte[0], "", "");
+    }
 
     // Constructor with arguments
     public Document(long identity, int version, long created, long modified, byte[] content, String hash, String type) {

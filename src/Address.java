@@ -12,7 +12,9 @@ public class Address {
     private String country;
 
     // Protected no-arg constructor
-    protected Address() {}
+    protected Address() {
+        this("", "", "", "");
+    }
 
     // Constructor
     public Address(String street, String postcode, String city, String country) {

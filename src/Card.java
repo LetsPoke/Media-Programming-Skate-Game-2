@@ -11,7 +11,9 @@ public class Card {
     private CardRank rank;
 
     // Protected no-arg constructor
-    protected Card() {}
+    protected Card() {
+        this(CardSuit.CLUBS, CardRank.ACE);
+    }
 
     // Constructor
     public Card(CardSuit suit, CardRank rank) {

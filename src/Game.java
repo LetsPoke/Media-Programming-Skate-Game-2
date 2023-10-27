@@ -1,5 +1,7 @@
 import Enums.GameState;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Game extends BaseEntity {
 
@@ -8,16 +10,18 @@ public class Game extends BaseEntity {
     @NotNull
     private SkatTable table;
     @NotNull
-    private Hand hands; //todo: need to be fixed, should be different
+    private Set<Hand> hands; // Using Set<Hand> to store multiple hands. could also be List<>
     private Card leftTrickCard;
     private Card middleTrickCard;
     private Card rightTrickCard;
 
     // Protected no-arg constructor
-    protected Game() {}
+    protected Game() {
+        this(0, 0, 0, 0, GameState.DEAL, new SkatTable(), new HashSet<>(), null, null, null); // Assuming SkatTable has a no-arg constructor and using ArrayList to instantiate hands.
+    }
 
     // Constructor with arguments
-    public Game(long identity, int version, long created, long modified, GameState state, SkatTable table, Hand hands, Card leftTrickCard, Card middleTrickCard, Card rightTrickCard) {
+    public Game(long identity, int version, long created, long modified, GameState state, SkatTable table, Set<Hand> hands, Card leftTrickCard, Card middleTrickCard, Card rightTrickCard) {
         super(identity, version, created, modified);
         this.state = state;
         this.table = table;
@@ -44,11 +48,11 @@ public class Game extends BaseEntity {
         this.table = table;
     }
 
-    public Hand getHands() {
+    public Set<Hand> getHands() {
         return hands;
     }
 
-    protected void setHands(Hand hands) {
+    protected void setHands(Set<Hand> hands) {
         this.hands = hands;
     }
 
