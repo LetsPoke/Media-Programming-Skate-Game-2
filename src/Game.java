@@ -1,82 +1,78 @@
 import Enums.GameState;
-
 import javax.validation.constraints.NotNull;
 
 public class Game extends BaseEntity {
 
     @NotNull
-    private GameState state;
-
+    private GameState state = GameState.DEAL;
     @NotNull
     private SkatTable table;
+    @NotNull
+    private Hand hands; //todo: need to be fixed, should be different
+    private Card leftTrickCard;
+    private Card middleTrickCard;
+    private Card rightTrickCard;
 
-    private Hand hands; // Assuming that these are lists of cards
-
-    private Card leftTickCard;
-    private Card middleTickCard;
-    private Card rightTickCard;
-
-    // Default no-arg constructor
-    public Game() {}
+    // Protected no-arg constructor
+    protected Game() {}
 
     // Constructor with arguments
-    public Game(long identity, int version, long created, long modified, GameState state, Hand hands, Card leftTickCard, Card middleTickCard, Card rightTickCard, SkatTable table) {
+    public Game(long identity, int version, long created, long modified, GameState state, SkatTable table, Hand hands, Card leftTrickCard, Card middleTrickCard, Card rightTrickCard) {
         super(identity, version, created, modified);
         this.state = state;
-        this.hands = hands;
-        this.middleTickCard = middleTickCard;
-        this.leftTickCard = leftTickCard;
-        this.rightTickCard = rightTickCard;
         this.table = table;
+        this.hands = hands;
+        this.leftTrickCard = leftTrickCard;
+        this.middleTrickCard = middleTrickCard;
+        this.rightTrickCard = rightTrickCard;
     }
 
-    // Getter methods
+    // Getter and Setter methods
     public GameState getState() {
         return state;
     }
 
-    public Hand getHands() {
-        return hands;
-    }
-
-    public Card getMiddleTickCard() {
-        return middleTickCard;
-    }
-
-    public Card getLeftTickCard() {
-        return leftTickCard;
-    }
-
-    public Card getRightTickCard() {
-        return rightTickCard;
+    public void setState(GameState state) {
+        this.state = state;
     }
 
     public SkatTable getTable() {
         return table;
     }
 
-    // Setter methods
-    public void setState(GameState state) {
-        this.state = state;
+    protected void setTable(SkatTable table) {
+        this.table = table;
     }
 
-    public void setHands(Hand hands) {
+    public Hand getHands() {
+        return hands;
+    }
+
+    protected void setHands(Hand hands) {
         this.hands = hands;
     }
 
-    public void setMiddleTickCard(Card middleTickCard) {
-        this.middleTickCard = middleTickCard;
+    public Card getLeftTrickCard() {
+        return leftTrickCard;
     }
 
-    public void setLeftTickCard(Card leftTickCard) {
-        this.leftTickCard = leftTickCard;
+    public void setLeftTrickCard(Card leftTrickCard) {
+        this.leftTrickCard = leftTrickCard;
     }
 
-    public void setRightTickCard(Card rightTickCard) {
-        this.rightTickCard = rightTickCard;
+    public Card getMiddleTrickCard() {
+        return middleTrickCard;
     }
 
-    public void setTable(SkatTable table) {
-        this.table = table;
+    public void setMiddleTrickCard(Card middleTrickCard) {
+        this.middleTrickCard = middleTrickCard;
+    }
+
+    public Card getRightTrickCard() {
+        return rightTrickCard;
+    }
+
+    public void setRightTrickCard(Card rightTrickCard) {
+        this.rightTrickCard = rightTrickCard;
     }
 }

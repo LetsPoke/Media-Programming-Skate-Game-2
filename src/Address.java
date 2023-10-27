@@ -1,19 +1,18 @@
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import javax.validation.constraints.Pattern;
 
 public class Address {
 
     @NotNull
     private String street;
     @NotNull
-    @Pattern(regexp = "\\d{5}")
     private String postcode;
     @NotNull
     private String city;
     @NotNull
-    @Size(min = 2, max = 2)
     private String country;
+
+    // Protected no-arg constructor
+    protected Address() {}
 
     // Constructor
     public Address(String street, String postcode, String city, String country) {

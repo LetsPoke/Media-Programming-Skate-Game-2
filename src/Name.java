@@ -1,22 +1,21 @@
+import javax.validation.constraints.NotNull;
+
 public class Name {
 
-    private String title; // optional
-    private String given;
+    private String title; // might be null
+    @NotNull
     private String family;
-    private String suffix; // optional
+    @NotNull
+    private String given;
+
+    // Protected no-arg constructor
+    protected Name() {}
 
     // Constructor
-    public Name(String given, String family) {
-        this.given = given;
-        this.family = family;
-    }
-
-    // Overloaded Constructor with title and suffix
-    public Name(String title, String given, String family, String suffix) {
+    public Name(String title, String family, String given) {
         this.title = title;
-        this.given = given;
         this.family = family;
-        this.suffix = suffix;
+        this.given = given;
     }
 
     // Getter and Setter methods
@@ -28,14 +27,6 @@ public class Name {
         this.title = title;
     }
 
-    public String getGiven() {
-        return given;
-    }
-
-    public void setGiven(String given) {
-        this.given = given;
-    }
-
     public String getFamily() {
         return family;
     }
@@ -44,21 +35,11 @@ public class Name {
         this.family = family;
     }
 
-    public String getSuffix() {
-        return suffix;
+    public String getGiven() {
+        return given;
     }
 
-    public void setSuffix(String suffix) {
-        this.suffix = suffix;
-    }
-
-    @Override
-    public String toString() {
-        return "Name{" +
-                "title='" + title + '\'' +
-                ", given='" + given + '\'' +
-                ", family='" + family + '\'' +
-                ", suffix='" + suffix + '\'' +
-                '}';
+    public void setGiven(String given) {
+        this.given = given;
     }
 }

@@ -1,7 +1,7 @@
 import Enums.CardRank;
 import Enums.CardSuit;
 
-import org.jetbrains.annotations.NotNull;
+import javax.validation.constraints.NotNull;
 
 public class Card {
 
@@ -9,6 +9,9 @@ public class Card {
     private CardSuit suit;
     @NotNull
     private CardRank rank;
+
+    // Protected no-arg constructor
+    protected Card() {}
 
     // Constructor
     public Card(CardSuit suit, CardRank rank) {

@@ -10,7 +10,6 @@
     <orderEntry type="library" name="jpa-eclipselink-2" level="project" />
     <orderEntry type="library" name="server-api-11" level="project" />
     <orderEntry type="library" name="skat-model" level="project" />
-    <orderEntry type="library" name="wrapper" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -20,5 +19,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="validation-api-2.0.1.Final" level="project" />
   </component>
 </module>

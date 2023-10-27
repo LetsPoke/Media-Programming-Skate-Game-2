@@ -5,16 +5,14 @@ public class Document extends BaseEntity {
 
     @NotNull
     private byte[] content;
-
     @NotNull
     @Size(max = 64)
     private String hash;
-
     @NotNull
     private String type;
 
-    // Default no-arg constructor
-    public Document() {}
+    // Protected no-arg constructor
+    protected Document() {}
 
     // Constructor with arguments
     public Document(long identity, int version, long created, long modified, byte[] content, String hash, String type) {
@@ -24,26 +22,25 @@ public class Document extends BaseEntity {
         this.type = type;
     }
 
-    // Getter methods
+    // Getter and Setter methods
     public byte[] getContent() {
         return content;
+    }
+
+    protected void setContent(byte[] content) {
+        this.content = content;
     }
 
     public String getHash() {
         return hash;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    // Setter methods
-    protected void setContent(byte[] content) {
-        this.content = content;
-    }
-
     protected void setHash(String hash) {
         this.hash = hash;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public void setType(String type) {

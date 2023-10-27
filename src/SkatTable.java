@@ -1,25 +1,28 @@
-import java.util.Collections;
-import java.util.Set;
+import javax.validation.constraints.NotNull;
 
 public class SkatTable extends BaseEntity {
 
+    @NotNull
     private String alias;
-    private Person player;
-    private Document servingDocument;
-    private Set<Game> games; // 0..* cardinality
+    @NotNull
+    private Document avatar;
+    @NotNull
+    private Person players; //todo: need to be fixed, should be different
+    @NotNull
+    private Game games; //todo: need to be fixed, should be different
+    @NotNull
+    private long baseValuation;
 
     // Protected no-arg constructor
-    protected SkatTable() {
-        super();
-        this.games = Collections.emptySet();
-    }
+    protected SkatTable() {}
 
     // Public constructor with arguments
-    public SkatTable(String alias, Person player, Document servingDocument) {
-        this();
+    public SkatTable(String alias, Document avatar, Person players, Game games, long baseValuation) {
         this.alias = alias;
-        this.player = player;
-        this.servingDocument = servingDocument;
+        this.avatar = avatar;
+        this.players = players;
+        this.games = games;
+        this.baseValuation = baseValuation;
     }
 
     // Getter and Setter methods
@@ -31,37 +34,31 @@ public class SkatTable extends BaseEntity {
         this.alias = alias;
     }
 
-    public Person getPlayer() {
-        return player;
+    public Document getAvatar() {
+        return avatar;
     }
 
-    public void setPlayer(Person player) {
-        this.player = player;
+    public void setAvatar(Document avatar) {
+        this.avatar = avatar;
     }
 
-    public Document getServingDocument() {
-        return servingDocument;
+    public Person getPlayers() {
+        return players;
     }
 
-    public void setServingDocument(Document servingDocument) {
-        this.servingDocument = servingDocument;
+    protected void setPlayers(Person players) {
+        this.players = players;
     }
 
-    public Set<Game> getGames() {
+    public Game getGames() {
         return games;
     }
 
-    public void setGames(Set<Game> games) {
+    protected void setGames(Game games) {
         this.games = games;
     }
 
-    @Override
-    public String toString() {
-        return "SkatTable{" +
-                "alias='" + alias + '\'' +
-                ", player=" + player +
-                ", servingDocument=" + servingDocument +
-                ", games=" + games +
-                '}';
-    }
+    public long getBaseValuation() { return baseValuation; }
+
+    public void setBaseValuation(long baseValuation) {this.baseValuation = baseValuation; }
 }

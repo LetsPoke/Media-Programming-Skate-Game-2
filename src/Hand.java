@@ -1,33 +1,42 @@
-import java.util.Collections;
-import java.util.Set;
+import javax.validation.constraints.NotNull;
 
 public class Hand extends BaseEntity {
 
+    @NotNull
     private Game game;
+    @NotNull
     private Person player;
-    private Set<Card> cards; // 0..* cardinality
+    @NotNull
+    private Card cards; //todo: need to be fixed, should be different
+    @NotNull
+    private boolean solo;
+    @NotNull
     private short points;
+    @NotNull
+    private short bid;
 
     // Protected no-arg constructor
-    protected Hand() {
-        super();
-        this.cards = Collections.emptySet();
-    }
+    protected Hand() {}
 
     // Public constructor with arguments
-    public Hand(Game game, Person player, short points) {
-        this();
+    public Hand(Game game, Person player, Card cards, boolean solo, short points, short bid) {
         this.game = game;
         this.player = player;
+        this.cards = cards;
+        this.solo = solo;
         this.points = points;
+        this.bid = bid;
     }
 
     // Getter and Setter methods
+    // public long getBet() { return bid; }
+    // public void setBet(short bid) { this.bid = bid; }
+
     public Game getGame() {
         return game;
     }
 
-    public void setGame(Game game) {
+    protected void setGame(Game game) {
         this.game = game;
     }
 
@@ -35,16 +44,32 @@ public class Hand extends BaseEntity {
         return player;
     }
 
-    public void setPlayer(Person player) {
+    protected void setPlayer(Person player) {
         this.player = player;
     }
 
-    public Set<Card> getCards() {
+    public Card getCards() {
         return cards;
     }
 
-    public void setCards(Set<Card> cards) {
+    protected void setCards(Card cards) {
         this.cards = cards;
+    }
+
+    public short getBid() {
+        return bid;
+    }
+
+    public void setBid(short bid) {
+        this.bid = bid;
+    }
+
+    public boolean getSolo() {
+        return solo;
+    }
+
+    public void setSolo(boolean solo) {
+        this.solo = solo;
     }
 
     public short getPoints() {
@@ -53,15 +78,5 @@ public class Hand extends BaseEntity {
 
     public void setPoints(short points) {
         this.points = points;
-    }
-
-    @Override
-    public String toString() {
-        return "Hand{" +
-                "game=" + game +
-                ", player=" + player +
-                ", cards=" + cards +
-                ", points=" + points +
-                '}';
     }
 }
