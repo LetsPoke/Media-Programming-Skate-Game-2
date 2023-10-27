@@ -1,3 +1,5 @@
+import Enums.NetworkNegotiationType;
+
 public class NetworkNegotiation extends BaseEntity {
 
     private Person negotiator;

@@ -1,4 +1,7 @@
-import javax.validation.constraints.NotNull;
+import Enums.CardRank;
+import Enums.CardSuit;
+
+import org.jetbrains.annotations.NotNull;
 
 public class Card {
 

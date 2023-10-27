@@ -1,5 +1,6 @@
+import Enums.GameState;
+
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 public class Game extends BaseEntity {
 
