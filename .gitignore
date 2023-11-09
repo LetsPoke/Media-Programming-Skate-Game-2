@@ -1,3 +1,4 @@
 # Root ignore
 .idea
 out
+/bin/
