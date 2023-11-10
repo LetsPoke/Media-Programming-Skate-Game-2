@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-11">
+		<attributes>
+			<attribute name="annotationpath" value="C:/Users/Lunaco/Desktop/schule/WT1 Web Applications/Dependencies"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Program Files/Java/jdk-11/lib"/>
+			<attribute name="module" value="true"/>
+			<attribute name="limit-modules" value="jdk.management.jfr,jdk.charsets,jdk.pack,jdk.xml.dom,jdk.rmic,jdk.jstatd,jdk.httpserver,jdk.jcmd,java.se,jdk.zipfs,jdk.jshell,jdk.editpad,jdk.jsobject,jdk.sctp,java.smartcardio,jdk.jlink,jdk.unsupported,jdk.scripting.nashorn.shell,jdk.unsupported.desktop,jdk.accessibility,jdk.security.jgss,jdk.hotspot.agent,jdk.crypto.cryptoki,jdk.net,jdk.naming.rmi,jdk.jconsole,jdk.crypto.mscapi,jdk.internal.vm.compiler,jdk.internal.vm.compiler.management,jdk.security.auth,jdk.jartool,jdk.naming.dns,jdk.naming.ldap,jdk.localedata"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jdbc-mariadb-2.3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jdbc-mysql-8.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jpa-eclipselink-2.7">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jrs-jersey-2.28">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/json-yasson-1.0.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jval-hibernate-6.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/server-api-11.0">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

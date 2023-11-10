@@ -1,0 +1,11 @@
+berlin.png:
+- source: https://www.vectorstock.com/royalty-free-vector/brandenburg-gate-in-berlin-vector-9057783
+- copyright: paseven
+
+london.png:
+- source: https://www.vectorstock.com/royalty-free-vector/london-christmas-glass-ball-vector-6469466
+- copyright: ladoga
+
+paris.png:
+- source: https://www.vectorstock.com/royalty-free-vector/paris-eiffel-tower-line-style-vector-22430611
+- copyright: ikonstudio
